@@ -82,16 +82,14 @@ No modules.
 
 ```hcl
 module "eks" {
-  source = ""
+  source = "github.com/ekedonald/EKS-Self-Managed-Cluster?ref=main"
 
-  # Required variables
   cluster_name        = "my-eks-cluster"
   cluster_version     = "1.31"
   vpc_id              = "vpc-1234567890"
   private_subnet_ids  = ["subnet-123", "subnet-456"]
   environment         = "production"
 
-  # Optional variables with defaults
   instance_types     = ["t3.xlarge"]
   disk_size         = 100
   desired_nodes     = 2
